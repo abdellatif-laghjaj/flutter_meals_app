@@ -8,23 +8,26 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            color.withOpacity(0.7),
-            color,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              color.withOpacity(0.7),
+              color,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(14),
         ),
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: Center(
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headline6,
+        child: Center(
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.headline6,
+          ),
         ),
       ),
     );
