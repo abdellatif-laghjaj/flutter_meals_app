@@ -16,7 +16,10 @@ class CategoryItem extends StatelessWidget {
             color.withOpacity(0.7),
             color,
           ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Text(title),
     );
