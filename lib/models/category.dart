@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Category {
   final String id;
@@ -6,8 +6,8 @@ class Category {
   final Color color;
 
   Category({
-    @required this.id,
-    @required this.title,
-    @required this.color,
+    this.id,
+    this.title,
+    this.color = Colors.orange,
   });
 }
