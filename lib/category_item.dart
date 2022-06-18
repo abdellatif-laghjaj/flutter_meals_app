@@ -21,9 +21,11 @@ class CategoryItem extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(14),
       ),
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.headline6,
+      child: Center(
+        child: Text(
+          title,
+          style: Theme.of(context).textTheme.headline6,
+        ),
       ),
     );
   }
