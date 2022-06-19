@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../models/meal.dart';
+
 class MealItem extends StatelessWidget {
   final String imageUrl;
   final String title;
+  final int duration;
+  final Complexity complexity;
+  final Affordability affordability;
 
-  MealItem(this.imageUrl, this.title);
+  MealItem({
+    @required this.imageUrl,
+    @required this.title,
+    @required this.duration,
+    @required this.complexity,
+    @required this.affordability,
+  });
 
   void selectMeal() {}
   @override
@@ -21,11 +32,18 @@ class MealItem extends StatelessWidget {
         child: Column(
           children: [
             Stack(
-              alignment: Alignment.center,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image.network(imageUrl),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
+                  ),
+                  child: Image.network(
+                    imageUrl,
+                    height: 250,
+                    width: double.infinity,
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 Text(
                   title,
