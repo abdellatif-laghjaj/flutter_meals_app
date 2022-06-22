@@ -17,13 +17,14 @@ class _TabsScreenState extends State<TabsScreen> {
         appBar: AppBar(
           title: Text('Meals App'),
           bottom: TabBar(
+            labelColor: Colors.white,
             tabs: <Widget>[
               Tab(
-                icon: Icon(Icons.category),
+                icon: Icon(Icons.category, color: Colors.white),
                 text: 'Categories',
               ),
               Tab(
-                icon: Icon(Icons.star),
+                icon: Icon(Icons.star, color: Colors.white),
                 text: 'Favorites',
               ),
             ],
