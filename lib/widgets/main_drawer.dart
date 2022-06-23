@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/filters_screen.dart';
+
 class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -40,13 +42,14 @@ class MainDrawer extends StatelessWidget {
             context,
             "Meals",
             Icons.restaurant,
-            () => Navigator.of(context).pushNamed('/'),
+            () => Navigator.of(context).pushReplacementNamed('/'),
           ),
           _buildListeTyle(
             context,
             "Settings",
             Icons.settings,
-            () => Navigator.of(context).pushNamed('/filters'),
+            () => Navigator.of(context)
+                .pushReplacementNamed(FiltersScreen.routeName),
           ),
         ],
       ),
