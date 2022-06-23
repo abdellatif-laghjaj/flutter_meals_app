@@ -3,6 +3,18 @@ import 'package:flutter/material.dart';
 class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Widget _buildListeTyle(BuildContext context, String title, IconData icon,
+        Function tapHandler) {
+      return ListTile(
+        leading: Icon(icon),
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.headline6,
+        ),
+        onTap: tapHandler,
+      );
+    }
+
     return Drawer(
       child: Column(
         children: [
@@ -23,6 +35,18 @@ class MainDrawer extends StatelessWidget {
           ),
           SizedBox(
             height: 20,
+          ),
+          _buildListeTyle(
+            context,
+            "Meals",
+            Icons.restaurant,
+            () => Navigator.of(context).pushNamed('/'),
+          ),
+          _buildListeTyle(
+            context,
+            "Settings",
+            Icons.settings,
+            () => Navigator.of(context).pushNamed('/filters'),
           ),
         ],
       ),
