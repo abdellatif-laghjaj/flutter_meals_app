@@ -15,25 +15,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
   var _vegan = false;
   var _vegetarian = false;
 
-  Widget _buildFilterSwitch(
-      BuildContext context, String title, bool value, Function onChanged) {
+  Widget _buildFilterSwitch(BuildContext context, String title, String subtitle,
+      bool value, Function onChanged) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.black,
-            ),
-          ),
-          Switch(
-            value: value,
-            onChanged: onChanged,
-          ),
-        ],
+      child: SwitchListTile(
+        title: Text(title),
+        subtitle: Text(subtitle),
+        value: value,
+        onChanged: onChanged,
       ),
     );
   }
@@ -57,6 +47,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
             _buildFilterSwitch(
               context,
               'Gluten Free',
+              'Only include gluten free meals',
               _gluttenFree,
               (value) {
                 setState(() {
@@ -67,6 +58,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
             _buildFilterSwitch(
               context,
               'Lactose Free',
+              'Only include lactose free meals',
               _lactose,
               (value) {
                 setState(() {
@@ -77,10 +69,22 @@ class _FiltersScreenState extends State<FiltersScreen> {
             _buildFilterSwitch(
               context,
               'Vegan',
+              'Only include vegan meals',
               _vegan,
               (value) {
                 setState(() {
                   _vegan = value;
+                });
+              },
+            ),
+            _buildFilterSwitch(
+              context,
+              'Vegetarian',
+              'Only include vegetarian meals',
+              _vegetarian,
+              (value) {
+                setState(() {
+                  _vegetarian = value;
                 });
               },
             ),
